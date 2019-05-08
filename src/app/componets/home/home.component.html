@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <span class="navbar-brand" href="#">Gauss Jordan</span>
+</nav>
+<main>
+    <div class="card border-primary mb-3 m-5">
+        <div class="card-header">
+          <h4>Matriz</h4>
+          <div>
+            <button class="btn btn-primary m-1"
+                    (click)="disminuir()">
+              <fa name="fas fa-angle-left" size="2x" ></fa>
+            </button>
+            <button class="btn btn-primary m-1"
+                    (click)="aumentar()">
+              <fa name="fas fa-angle-right" size="2x"></fa>
+            </button>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="container no-wrap">
+            <div class="row">
+              <div class="col">
+                  <div class="row" *ngFor="let vector of matriz; let nf=index">
+                      <div class="col" *ngFor="let valor of vector;let nc=index ">
+                          <input class="form-control m-1" 
+                                 placeholder="A {{nf+1}}, {{nc+1}}"
+                                 [(ngModel)]="valor.value" 
+                                 >
+                      </div>
+                    </div>
+              </div>
+              <div class="col-1">
+                  <div class="row" *ngFor="let v of vector;let nv=index">
+                      <input class="form-control m-1" placeholder="R {{nv+1}}, {{nv+1}}">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="btn btn-primary m-1"
+                    (click)="calcular()">calcular
+            </button>
+      </div>
+</main>
